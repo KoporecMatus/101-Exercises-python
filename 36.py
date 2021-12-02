@@ -1,3 +1,4 @@
+#DONT FORGET TO CHANGE FILE PATH BEFORE YOU RUN PROGRAM
 def Countwords(filepath):
     with open(filepath, "r") as file:
         StrgFile=file.read()
