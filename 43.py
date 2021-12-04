@@ -1,17 +1,28 @@
 import string
 
-List1 = []
-List2 = []
+def wrtalpha(filepath):
+    with open(filepath, "w") as file:
+        for (letter1,letter2) in zip(string.ascii_lowercase[0::2],string.ascii_lowercase[1::2]):
+            file.write(letter1 + letter2 + "\n")
+        return file
 
-for letter in string.ascii_lowercase:
-    List1.append(letter)
+def delalpha(filepath):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+    with open(filepath, "w") as file:
+        for line in lines:
+            del line
+        return file
 
-List2.append(List1[::2])
+def printalpha(filepath):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+    for line in lines:
+        print(line)
+    return file
 
-List3 = zip(List1,List2)
+#wrtalpha("C:/Users/kopor/OneDrive/Počítač/Python/101 Exercises/alphabet.txt")
 
+delalpha("C:/Users/kopor/OneDrive/Počítač/Python/101 Exercises/alphabet.txt")
 
-print(List1)
-print(List2)
-print(List3)
-#"C:/Users/kopor/OneDrive/Počítač/Python/101 Exercises/alphabet.txt"
+#printalpha("C:/Users/kopor/OneDrive/Počítač/Python/101 Exercises/alphabet.txt")
